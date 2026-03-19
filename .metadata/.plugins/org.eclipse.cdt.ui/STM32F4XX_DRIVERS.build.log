@@ -1,0 +1,21 @@
+23:07:06 **** Build of configuration Debug for project STM32F4XX_DRIVERS ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Src/001_Led_Toggle.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/mathesh/Driver-Development-Stm32/STM32F4XX_DRIVERS/DRIVERS/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/001_Led_Toggle.d" -MT"Src/001_Led_Toggle.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/001_Led_Toggle.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/mathesh/Driver-Development-Stm32/STM32F4XX_DRIVERS/DRIVERS/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/mathesh/Driver-Development-Stm32/STM32F4XX_DRIVERS/DRIVERS/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../DRIVERS/SRC/STM32F446XX_GPIO_DRIVER.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/mathesh/Driver-Development-Stm32/STM32F4XX_DRIVERS/DRIVERS/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"DRIVERS/SRC/STM32F446XX_GPIO_DRIVER.d" -MT"DRIVERS/SRC/STM32F446XX_GPIO_DRIVER.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "DRIVERS/SRC/STM32F446XX_GPIO_DRIVER.o"
+arm-none-eabi-gcc -o "STM32F4XX_DRIVERS.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/mathesh/Driver-Development-Stm32/STM32F4XX_DRIVERS/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F4XX_DRIVERS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F4XX_DRIVERS.elf
+ 
+arm-none-eabi-size  STM32F4XX_DRIVERS.elf 
+arm-none-eabi-objdump -h -S STM32F4XX_DRIVERS.elf  > "STM32F4XX_DRIVERS.list"
+   text	   data	    bss	    dec	    hex	filename
+   1672	      0	   1568	   3240	    ca8	STM32F4XX_DRIVERS.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F4XX_DRIVERS.list
+ 
+
+23:07:06 Build Finished. 0 errors, 0 warnings. (took 113ms)
+

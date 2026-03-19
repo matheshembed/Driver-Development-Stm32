@@ -59,8 +59,8 @@ all: main-build
 main-build: 05_HSE_Measurement.elf secondary-outputs
 
 # Tool invocations
-05_HSE_Measurement.elf 05_HSE_Measurement.map: $(OBJS) $(USER_OBJS) D:\MCU1_Driver_Development\5\ HSE\ Measurement\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "05_HSE_Measurement.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\MCU1_Driver_Development\5 HSE Measurement\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="05_HSE_Measurement.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+05_HSE_Measurement.elf 05_HSE_Measurement.map: $(OBJS) $(USER_OBJS) /home/mathesh/Driver-Development-Stm32/05_HSE_Measurement/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "05_HSE_Measurement.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mathesh/Driver-Development-Stm32/05_HSE_Measurement/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="05_HSE_Measurement.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

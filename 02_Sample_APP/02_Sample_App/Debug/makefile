@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (14.3.rel1)
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 2_Sample_app
+BUILD_ARTIFACT_NAME := 02_Sample_App
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-2_Sample_app.elf \
+02_Sample_App.elf \
 
 MAP_FILES += \
-2_Sample_app.map \
+02_Sample_App.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-2_Sample_app.list \
+02_Sample_App.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 2_Sample_app.elf secondary-outputs
+main-build: 02_Sample_App.elf secondary-outputs
 
 # Tool invocations
-2_Sample_app.elf 2_Sample_app.map: $(OBJS) $(USER_OBJS) D:\Driver-Development-Stm32\2\ Sample_APP\2_Sample_app\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "2_Sample_app.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Driver-Development-Stm32\2 Sample_APP\2_Sample_app\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_Sample_app.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+02_Sample_App.elf 02_Sample_App.map: $(OBJS) $(USER_OBJS) /home/mathesh/Driver-Development-Stm32/02_Sample_APP/02_Sample_App/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "02_Sample_App.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mathesh/Driver-Development-Stm32/02_Sample_APP/02_Sample_App/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="02_Sample_App.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,14 +69,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-2_Sample_app.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "2_Sample_app.list"
+02_Sample_App.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "02_Sample_App.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 2_Sample_app.elf 2_Sample_app.list 2_Sample_app.map default.size.stdout
+	-$(RM) 02_Sample_App.elf 02_Sample_App.list 02_Sample_App.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
