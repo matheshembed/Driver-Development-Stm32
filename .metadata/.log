@@ -305,3 +305,12 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -data file:/home/mathesh
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-19 23:04:06.704
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-19 23:42:30.204
+!MESSAGE Indexed '05_HSE_Measurement' (3 sources, 53 headers) in 0.135 sec: 1,961 declarations; 2,878 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.041%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-19 23:47:08.893
+!MESSAGE Indexed '04_HSI_Measurement' (3 sources, 53 headers) in 0.118 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-19 23:47:59.126
+!MESSAGE Indexed '04_HSI_Measurement' (3 sources, 53 headers) in 0.079 sec: 1,954 declarations; 2,862 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
