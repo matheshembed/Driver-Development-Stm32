@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00000fac  00000000  00000000  000015c5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00000422  00000000  00000000  00002571  2**0
+ 17 .debug_line   000004e1  00000000  00000000  00002571  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00003d74  00000000  00000000  00002993  2**0
+ 18 .debug_str    00003d69  00000000  00000000  00002a52  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00006707  2**0
+ 19 .comment      00000043  00000000  00000000  000067bb  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000058  00000000  00000000  0000674c  2**2
+ 20 .debug_frame  00000058  00000000  00000000  00006800  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000063  00000000  00000000  000067a4  2**0
+ 21 .debug_line_str 00000058  00000000  00000000  00006858  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -144,7 +144,7 @@ int main(void)
  8000254:	f043 6280 	orr.w	r2, r3, #67108864	@ 0x4000000
  8000258:	693b      	ldr	r3, [r7, #16]
  800025a:	601a      	str	r2, [r3, #0]
-	 * which will be covered in later sections of this course.
+	 * which will be covered in later.
 	 */
 
 		//a ) Enable the peripheral clock for GPIOA peripheral
@@ -308,18 +308,18 @@ Infinite_Loop:
 
 08000304 <__libc_init_array>:
  8000304:	b570      	push	{r4, r5, r6, lr}
- 8000306:	4d0d      	ldr	r5, [pc, #52]	@ (800033c <__libc_init_array+0x38>)
- 8000308:	4c0d      	ldr	r4, [pc, #52]	@ (8000340 <__libc_init_array+0x3c>)
- 800030a:	1b64      	subs	r4, r4, r5
- 800030c:	10a4      	asrs	r4, r4, #2
+ 8000306:	4b0d      	ldr	r3, [pc, #52]	@ (800033c <__libc_init_array+0x38>)
+ 8000308:	4d0d      	ldr	r5, [pc, #52]	@ (8000340 <__libc_init_array+0x3c>)
+ 800030a:	1b5b      	subs	r3, r3, r5
+ 800030c:	109c      	asrs	r4, r3, #2
  800030e:	2600      	movs	r6, #0
  8000310:	42a6      	cmp	r6, r4
  8000312:	d109      	bne.n	8000328 <__libc_init_array+0x24>
- 8000314:	4d0b      	ldr	r5, [pc, #44]	@ (8000344 <__libc_init_array+0x40>)
- 8000316:	4c0c      	ldr	r4, [pc, #48]	@ (8000348 <__libc_init_array+0x44>)
- 8000318:	f000 f818 	bl	800034c <_init>
- 800031c:	1b64      	subs	r4, r4, r5
- 800031e:	10a4      	asrs	r4, r4, #2
+ 8000314:	f000 f81a 	bl	800034c <_init>
+ 8000318:	4d0a      	ldr	r5, [pc, #40]	@ (8000344 <__libc_init_array+0x40>)
+ 800031a:	4b0b      	ldr	r3, [pc, #44]	@ (8000348 <__libc_init_array+0x44>)
+ 800031c:	1b5b      	subs	r3, r3, r5
+ 800031e:	109c      	asrs	r4, r3, #2
  8000320:	2600      	movs	r6, #0
  8000322:	42a6      	cmp	r6, r4
  8000324:	d105      	bne.n	8000332 <__libc_init_array+0x2e>
