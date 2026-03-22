@@ -1,1 +1,31 @@
  
+ What is vector table ?
+	Direction (pointers or addresses) of exception handlers (system exceptions + interrupts )
+	Vector table contains ISR addresses of all system exceptions and interrupts supported by the mcu.
+	
+	In STM32F407X MCU:
+		15 processor system exceptions and 82 interrupts(IRQ's) =97
+		So, 97 handler addresses must be store in Vector table
+		
+		Total space consumed by the Vector table = 97 + 1 (to store initial stack addr) = 98 word = 392 bytes.
+ -Refer section 10.2 in the RM to find the vector table.
+ 
+ Position:
+	-The position of the vector table denotes the order or place of the NVIC
+	-The another name for the term "position" is IRQ number.
+ 
+ Priority:
+	-The order of which gets executed first and next as it name suggests for the exceptions.
+	
+ Type of Prioriry:
+	-Fixed -> No one can change the priority including ST since it is from the processor end.
+	-Settable -> Can be changed using the programming code.
+	
+ Address:
+	-Where exactly in the processor memory map we have to keep the address of the corresponding exception handler.
+	
+	
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Handler - It is nothing but a C function which takes care of that exception.
+	
+ 
