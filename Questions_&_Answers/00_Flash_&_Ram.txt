@@ -1,0 +1,92 @@
+1. What is SRAM? What are the other RAM sections? 
+What is SRAM?
+	SRAM = Static Random Access Memory
+	Volatile (data lost on power off)
+	Very fast
+	Used during program execution
+	
+	👉 In STM32, SRAM is where:
+	stack lives
+	heap lives
+	global/static variables go (if not in flash)
+
+	Typically:
+
+	1. SRAM1
+	Main RAM block
+	Example: 0x20000000 – 0x2001BFFF
+	2. SRAM2
+	Smaller, separate RAM
+	Example: 0x2001C000 – ...
+
+	👉 Why split?
+
+	Power optimization
+	Backup/retention
+	Some peripherals may prefer specific regions
+
+2. ROM and Flash — same or different?
+
+	Short answer: NO (but related)
+
+	Flash (your code memory)
+	#define FLASH_BASE_ADDR 0x08000000U
+	Non-volatile
+		Stores:
+			your program (.text)
+			constants
+			You can program/erase it
+
+	ROM / System Memory
+	#define ROM_BASE_ADDR 0x1FFF0000U
+	This is:
+
+	Factory programmed by ST
+	Contains:
+	Bootloader (UART, USB DFU, etc.)
+ 
+	Key difference
+		Memory	Writable?	Purpose
+		Flash	✅ Yes	Your program
+		ROM (System Memory)	❌ No	ST bootloader
+
+
+	3. What is the main role of SRAM?
+		Think of SRAM as your working memory
+
+			It stores:
+
+			Local variables
+			Global variables
+			Stack (function calls)
+			Heap (dynamic memory)
+			Example:
+			int global_var = 10;   // stored in SRAM
+			void func() {
+				int x = 5;        // stored in stack (SRAM)
+			}
+
+
+	4. When is SRAM used?
+		SRAM is used at runtime
+
+		During:
+		Function calls → stack
+		Variable storage → data/bss
+		Interrupt handling
+		Buffering (UART, SPI, etc.)
+		
+		 Important flow (VERY IMPORTANT)
+		Code is stored in Flash
+		When MCU starts:
+		.data copied from Flash → SRAM
+		.bss initialized in SRAM
+		CPU executes using:
+		Flash (instructions)
+		SRAM (data)
+		
+		 Simple mental model
+		FLASH → "Program storage"
+		SRAM  → "Working memory"
+		ROM   → "Factory bootloader"
+
