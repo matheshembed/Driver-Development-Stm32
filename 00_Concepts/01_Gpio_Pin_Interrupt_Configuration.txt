@@ -1,0 +1,27 @@
+GPIO PIN INTERRUPT CONFIGURATION
+	1. Pin must be in input configuration. Because you are receiving an interrupt right.
+	2. Configure the edge trigger (RT,FT,RFT). We have to do this in EXTI registers.
+	3. Enable interrupt delivery From the peripheral to the processor  (On peripheral side )
+	4. Identify the IRQ Number on which the processor accepts the interrupt on that pin.
+	5. Configure the IRQ Priority for the identified irq number (Processor side)
+	6. Enable interrupt reception on that IRQ number (Processor side)
+	7. Implement IRQ Handler.
+	
+	How to find the appropriate register for the respective IRQ number
+		| Register | IRQ range |
+		| ISER0    | 0–31      |
+		| ISER1    | 32–63     |
+		| ISER2    | 64–95     |
+		| ISER3    | 96–127    |
+		| ...      | ...       |
+	 
+	 Register index = IRQn / 32
+	 Bit position   = IRQn % 32
+	 
+	 
+	 
+	 
+	 
+	
+	 
+	
