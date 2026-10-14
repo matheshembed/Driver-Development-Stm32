@@ -63,19 +63,19 @@ typedef struct
  * GPIO Pin Possible Modes
  * @GPIO_PIN_MODES
  */
-#define GPIO_MODE_IN		0
+#define GPIO_MODE_IN			0
 #define GPIO_MODE_OUT		1
 #define	GPIO_MODE_ALTFN		2
-#define GPIO_MODE_ANALOG	3
-#define GPIO_MODE_IT_FT 	4 // Interrupt Falling edge
+#define GPIO_MODE_ANALOG		3
+#define GPIO_MODE_IT_FT 		4 // Interrupt Falling edge
 #define GPIO_MODE_IT_RT		5 // Interrupt Rising Edge
-#define	GPIO_MODE_IT_RFT	6 // Interrupt Rising Falling Edge
+#define	GPIO_MODE_IT_RFT		6 // Interrupt Rising Falling Edge
 
 /*
  * GPIO Pin Possible Output Types
  * @GPIO_PIN_OUTPUT_TYPE
  */
-#define GPIO_OP_TYPE_PP 	0 // Output type Push Pull
+#define GPIO_OP_TYPE_PP 		0 // Output type Push Pull
 #define GPIO_OP_TYPE_OD		1 // Output type Open drain
 
 /*
@@ -89,7 +89,7 @@ typedef struct
  * GPIO Pin  Pull up and pull down configuration macros
  * @GPIO_PIN_SPEED
  */
-#define GPIO_NO_PUPD		0
+#define GPIO_NO_PUPD			0
 #define GPIO_PU				1
 #define GPIO_PD				2
 
